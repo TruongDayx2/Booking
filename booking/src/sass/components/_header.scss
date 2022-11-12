@@ -10,6 +10,10 @@
         max-width: 1024px;
         margin: 20px 0 100px 0;
 
+        &.listMode{
+            margin: 20px 0 0px 0;
+        }
+
         &__list{
             display: flex;
             gap: 40px;
@@ -78,6 +82,42 @@
                     position: absolute;
                     top:100%
                 }
+            }
+
+            &__options{
+                position: absolute;
+                top: 50px;
+                background-color: #fff;
+                color:gray;
+                border-radius: 5px;
+                -webkit-box-shadow:0px 0px 10px -5px rgba(0,0,0,0.4);
+                box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.4);
+                cursor: default;
+
+                &__item{
+                    width: 200px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px;
+                    
+
+                    &__counter{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 14px;
+                        color: #000;
+
+                        &__btn{
+                            width: 20px;
+                            border: 1px solid $btn-main-bg;
+                            color: $btn-main-bg;
+                            cursor: pointer;
+                            background-color: #fff;
+                        }
+                    }
+                }
+
             }
         }
     }
