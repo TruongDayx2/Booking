@@ -24,6 +24,58 @@
         color: #555;
         margin-bottom: 10px;
     }
+
+    &>button{
+        padding: 10px;
+        background-color: $btn-main-bg;
+        border: none;
+        color: #fff;
+        width: 100%;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+
+        &>label{
+            font-size: 12px;
+        }
+
+        &>input{
+            height: 30px;
+            border: none;
+            padding: 5px;
+        }
+
+        &>span{
+            height: 30px;
+            padding: 5px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &__options{
+            padding: 10px;
+        }
+
+        &__option{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 12px;
+
+            &__input{
+                width: 50px;
+            }
+        }
+    }
 }
 
 .listResult{

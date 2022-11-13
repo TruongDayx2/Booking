@@ -37,6 +37,7 @@ const Header = ({type}) => {
   });
 
   const handleOption = (name, operation) => {
+    console.log(openOptions )
     setOptions((prev) => {
       return {
         ...prev,
@@ -111,6 +112,7 @@ const Header = ({type}) => {
                     onChange={(item) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
+                    minDate={new Date()}
                     className="header__container__search__item__date"
                   />
                 )}
@@ -121,12 +123,13 @@ const Header = ({type}) => {
                   className="header__container__search__item__icon"
                 />
                 <span
-                  onClick={() => setOpenOptions(!openOptions)}
+                  onClick={() => setOpenOptions(!openOptions) }
                   className="header__container__search__item__text"
                 >
                   {`${options.adult} adult - ${options.children} children - ${options.room} room`}
                   {/* adult  */}
-                  {openOptions && (
+                  {console.log("123" ,openOptions )}
+                  {openOptions && 
                     <div className="header__container__search__options">
                       <div className="header__container__search__options__item">
                         <span className="header__container__search__options__item__text">
@@ -200,7 +203,7 @@ const Header = ({type}) => {
                         </div>
                       </div>
                     </div>
-                  )}
+                  }
                 </span>
               </div>
               <div className="header__container__search__item">
