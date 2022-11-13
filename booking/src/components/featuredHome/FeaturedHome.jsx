@@ -11,7 +11,7 @@ const FeaturedHome = () => {
         />
         <span className="fHome__item__name">7Seasons Apartments Budapest</span>
         <span className="fHome__item__city">06. Terézváros, Hungary, Budapest</span>
-        <span className="fHome__item__price">Starting from VND 2,375,705</span>
+        <span className="fHome__item__price">Starting from  $120</span>
         <div className="fHome__item__rate">
           <button>8.8</button>
           <span>Excellent</span>
@@ -25,7 +25,7 @@ const FeaturedHome = () => {
         />
         <span className="fHome__item__name">Oriente Palace Apartments</span>
         <span className="fHome__item__city">Centro, Spain, Madrid</span>
-        <span className="fHome__item__price">Starting from VND 2,971,297</span>
+        <span className="fHome__item__price">Starting from  $120</span>
         <div className="fHome__item__rate">
           <button>8.9</button>
           <span>Fabulous</span>
@@ -39,7 +39,7 @@ const FeaturedHome = () => {
         />
         <span className="fHome__item__name">numa I Vita Apartments</span>
         <span className="fHome__item__city">Fortezza da Basso, Italy, Florence</span>
-        <span className="fHome__item__price">Starting from VND 1,960,533</span>
+        <span className="fHome__item__price">Starting from  $120</span>
         <div className="fHome__item__rate">
           <button>8.7</button>
           <span>Excellent</span>
@@ -53,7 +53,7 @@ const FeaturedHome = () => {
         />
         <span className="fHome__item__name">Aparthotel Stare Miasto</span>
         <span className="fHome__item__city">Old Town, Poland, Kraków</span>
-        <span className="fHome__item__price">Starting from VND 2,507,759</span>
+        <span className="fHome__item__price">Starting from  $120</span>
         <div className="fHome__item__rate">
           <button>9.0</button>
           <span>Fabulous</span>
