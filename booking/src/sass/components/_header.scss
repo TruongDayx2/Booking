@@ -80,7 +80,9 @@
 
                 &__date{
                     position: absolute;
-                    top:100%
+                    top:100%;
+                    z-index: 2;
+                    
                 }
             }
 
@@ -93,6 +95,7 @@
                 -webkit-box-shadow:0px 0px 10px -5px rgba(0,0,0,0.4);
                 box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.4);
                 cursor: default;
+                z-index: 2;
 
                 &__item{
                     width: 200px;
