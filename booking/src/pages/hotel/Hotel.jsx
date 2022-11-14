@@ -1,14 +1,38 @@
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCircleXmark,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
-
-
+import { useState } from "react";
 
 const Hotel = () => {
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const hanldeOpen = (i) => {
+    setOpen(true);
+    setSlideNumber(i);
+  };
+  console.log(slideNumber)
+  
+
+  const handleNextImg = (key)=>{
+    let newSlideNumber
+    if(key === 'l'){
+      newSlideNumber = slideNumber === 0 ? photos.length-1 : slideNumber -1
+    }else{
+      newSlideNumber = slideNumber === photos.length-1 ?  0 : slideNumber + 1
+    }
+    setSlideNumber(newSlideNumber)
+  }
+
   const photos = [
     {
       src: "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/274605321.jpg?k=f31cc5c27072a119a14ddc232e2f44aeea9a45039d378561067fcf24b78bab76&o=&hp=1",
@@ -34,6 +58,20 @@ const Hotel = () => {
       <Navbar />
       <Header type="list" />
       <div className="hContainer">
+        {open && (
+          <div className="hSlider">
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="hSlider__close"
+              onClick={()=>setOpen(false)}
+            />
+            <FontAwesomeIcon icon={faArrowLeft} className="hSlider__arrow" onClick={()=>handleNextImg('l')} />
+            <div className="hSlider__wrap">
+              <img src={photos[slideNumber].src} alt="" className="hSlider__wrap__img" />
+            </div>
+            <FontAwesomeIcon icon={faArrowRight} className="hSlider__arrow" onClick={()=>handleNextImg('r')}/>
+          </div>
+        )}
         <div className="hWrapper">
           <button className="hWrapper__bookNow">Reserve or Book Now!</button>
           <h1 className="hWrapper__title">Residenza Italia</h1>
@@ -46,9 +84,14 @@ const Hotel = () => {
             Book a stay over $114 at this property and get a free airport taxi
           </span>
           <div className="hWrapper__img">
-            {photos.map((photo) => (
-              <div className="hWrapper__img__wrap">
-                <img src={photo.src} alt="" className="hWrapper__img__wrap__item" />
+            {photos.map((photo, i) => (
+              <div key={i} className="hWrapper__img__wrap">
+                <img
+                  onClick={() => hanldeOpen(i)}
+                  src={photo.src}
+                  alt=""
+                  className="hWrapper__img__wrap__item"
+                />
               </div>
             ))}
           </div>
@@ -70,7 +113,10 @@ const Hotel = () => {
             </div>
             <div className="hWrapper__details__price">
               <h1>Perfect for a 9-night stay!</h1>
-              <span>Situated in the real heart of Rome, this property has an excellent location score of 9.4</span>
+              <span>
+                Situated in the real heart of Rome, this property has an excellent location score of
+                9.4
+              </span>
               <h2>
                 <b>$900</b> (9 nights)
               </h2>
@@ -78,8 +124,8 @@ const Hotel = () => {
             </div>
           </div>
         </div>
-        <MailList/>
-        <Footer/>
+        <MailList />
+        <Footer />
       </div>
     </div>
   );
