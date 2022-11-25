@@ -15,6 +15,7 @@ import { format } from "date-fns";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({type}) => {
   const navigate = useNavigate()
@@ -48,6 +49,8 @@ const Header = ({type}) => {
   };
 
   const {dispatch} = useContext(SearchContext)
+  const { user } = useContext(AuthContext);
+
 
   //search
   const handleSearch = ()=>{
@@ -87,7 +90,7 @@ const Header = ({type}) => {
               Get rewarded for your travels - unlock instant savings of 10% or more with a free
               77Booking account
             </p>
-            <button className="header__container__btn">Sing in/ Register</button>
+            {!user && <button className="header__container__btn">Sing in/ Register</button>}
             <div className="header__container__search">
               <div className="header__container__search__item">
                 <FontAwesomeIcon icon={faBed} className="header__container__search__item__icon" />
